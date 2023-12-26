@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #addItemBtn{
+        font-size: 20px;
+        background-color: coral;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+</style>
+<body>
+    <!-- <p >0</p>
+    <button class="btn" onclick="clickMe()">clickme</button> -->
+    <ul id="itemList"></ul>
+    <button id="addItemBtn">Add Item</button>
+</body>
+<script>
+    // let x = 1;
+    // let y= 1;
+    // let z= 4;
+    
+    // console.log(`x:${x}, `);
+    // document.querySelector(".demo1").addEventListener('click',function(){
+    // x++;
+    // document.querySelector(".demo2").textContent ='click here..'
+    // document.querySelector('.box1').textContent = x++;
+    // ;
+    
+    // console.log(document.querySelector('.box1').textContent)
+
+    // })
+    // x = x
+
+    // var y=0;
+    // function clickMe(){
+
+    //     y+=2;
+    //     document.querySelector("p").innerHTML += " "+ y;
+    // }
+    document.addEventListener('DOMContentLoaded', function () {
+    const addItemBtn = document.getElementById('addItemBtn');
+    const itemList = document.getElementById('itemList');
+
+    addItemBtn.addEventListener('click', function () {
+    console.log('Button clicked');
+    const newItem = prompt('Enter a new item:');
+
+    console.log('Entered item:', newItem);
+
+    if (newItem !== null && newItem.trim() !== '') {
+      const listItem = document.createElement('li');
+      listItem.textContent = newItem;
+      addItemBtn.parentNode.insertBefore(listItem, addItemBtn.nextSibling);
+
+    }
+  });
+});
+
+
+
+
+</script>
+
+</html>
